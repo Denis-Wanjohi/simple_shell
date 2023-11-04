@@ -9,7 +9,5 @@ while (true)
 {
 	prompt();
 }
-
-
 	return (0);
 }
