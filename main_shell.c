@@ -5,9 +5,12 @@
  */
 int main()
 {
-while (true)
+char command[200];
+while (1)
 {
-	prompt();
+    display();
+    read_input(command,sizeof(command));
+    execution(command);
 }
-	return (0);
+return 0;
 }
