@@ -6,6 +6,8 @@
 #include <string.h>
 #include <stdbool.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 void display(void);
 void printer(const char *toPrint);
 void read_input(char *command,size_t size);
