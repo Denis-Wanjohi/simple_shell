@@ -2,15 +2,14 @@
 /**
  * read_input- reads the input
 */
-void read_input(char *command,size_t size){
-    if(fgets(command,size,stdin) == NULL){
-        if (feof(stdin)){
-            printer("\n");
-            exit(EXIT_SUCCESS);
-        }else{
-            printer("error reding ....");
-            exit(EXIT_FAILURE);
-        }
-    }
-    command[strcspn(command,"\n")] = '\0';
+size_t read_input(char *command)
+{
+	size_t btsRd;
+	if(command == NULL ){
+
+		return (0);
+	}
+ 	btsRd = readLine(0,command,sizeof(command));
+    command[strcspn(command, "\n")] = '\0';
+	return (btsRd);
 }

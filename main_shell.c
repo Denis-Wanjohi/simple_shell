@@ -5,11 +5,12 @@
  */
 int main()
 {
-char command[200];
+char command[1024];
+command[0] ='\0';
 while (1)
 {
     display();
-    read_input(command,sizeof(command));
+    read_input(command);
     execution(command);
 }
 return 0;

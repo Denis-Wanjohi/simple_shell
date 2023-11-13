@@ -10,6 +10,7 @@
 #include <sys/wait.h>
 void display(void);
 void printer(const char *toPrint);
-void read_input(char *command,size_t size);
+size_t read_input(char *command);
 void execution(const char *command);
+size_t readLine(int fd,char *command,size_t cmdsize);
 #endif
