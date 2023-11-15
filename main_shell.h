@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+extern char **environ;
 void display(void);
 void printer(const char *toPrint);
 size_t read_input(char *command);
