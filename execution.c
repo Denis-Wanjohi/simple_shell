@@ -19,7 +19,7 @@
         return;
         }
     command_d = strdup (command);
-    token = strtok (command_d, " ");
+    token = my_strtok (command_d, " ");
         if (strcmp (command_d, "exit") == 0)
             {
           exit (EXIT_SUCCESS);
@@ -35,21 +35,21 @@
             }
         else
         {
-            if (access (command_d, X_OK) == -1)
-                {
-                	printf ("Command: %s not found\n", command_d);
-                    return;
-                }
-            while (token != NULL)
+           while (token != NULL)
                 {
                     args[i] = token;
-                    token = strtok (NULL, " ");
+                    token = my_strtok (NULL, " ");
                     i++;
                 }
             args[i] = NULL;
             f_path[0] = '\0';
             snprintf (f_path, sizeof (f_path) - 1, "/bin/%s", args[0]);
-            pid = fork ();
+            if (access (f_path, X_OK) == -1)
+                {
+                        printf ("Command: %s not found\n", command_d);
+                    return;
+                }
+	    pid = fork ();
                 if (pid < 0)
                 {
                     perror ("Fork failed");

@@ -13,4 +13,5 @@ void printer(const char *toPrint);
 size_t read_input(char *command);
 void execution(const char *command);
 size_t readLine(int fd,char *command,size_t cmdsize);
+char *my_strtok (char *cmd, const char *delim);
 #endif
