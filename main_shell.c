@@ -10,7 +10,19 @@ command[0] = '\0';
 while (1)
 {
 display();
-read_input(command);
+if (fgets(command, sizeof(command), stdin) == NULL)
+{
+if (feof(stdin))
+{
+printf("\nEnd of File condition (Ctrl+D) detected. Exiting...\n");
+break;
+}
+else
+{
+perror("Error reading input");
+exit(EXIT_FAILURE);
+}
+}
 execution(command);
 }
 return (0);
