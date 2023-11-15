@@ -14,4 +14,6 @@ size_t read_input(char *command);
 void execution(const char *command);
 size_t readLine(int fd, char *command, size_t cmdsize);
 char *my_strtok(char *cmd, const char *delim);
+char my_env(void);
+void _pid(char *command_d, char *f_path, char **args, char **envp);
 #endif
