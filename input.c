@@ -3,7 +3,7 @@
  * read_input()-reads the input
  * @command:command to read
  * Return:size of the command
-*/
+ */
 size_t read_input(char *command)
 {
 size_t btsRd;
@@ -15,3 +15,4 @@ btsRd = readLine(0, command, sizeof(command));
 command[strcspn(command, "\n")] = '\0';
 return (btsRd);
 }
+
