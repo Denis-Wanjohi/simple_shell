@@ -3,6 +3,7 @@
  * printer()-acts as the print function
  * @toPrint : content to be printed
 */
-void printer(const char *toPrint){
-    write(STDOUT_FILENO,toPrint,strlen(toPrint));
+void printer(const char *toPrint)
+{
+write(STDOUT_FILENO, toPrint, strlen(toPrint));
 }

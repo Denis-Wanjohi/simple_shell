@@ -3,6 +3,7 @@
 /**
  * display()-displays the prompts
  */
-void display(void){
-    printer("$ ");
+void display(void)
+{
+printer("$ ");
 }
