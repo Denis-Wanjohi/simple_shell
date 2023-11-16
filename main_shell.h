@@ -10,6 +10,7 @@
 #include <sys/wait.h>
 extern char **environ;
 void display(void);
+void exe(char *command);
 void printer(const char *toPrint);
 size_t read_input(char *command);
 void execution(const char *command);

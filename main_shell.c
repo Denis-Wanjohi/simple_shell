@@ -6,7 +6,7 @@
 int main(void)
 {
 char command[1024];
-command[0] = '\0';
+size_t length;
 while (1)
 {
 display();
@@ -23,7 +23,12 @@ perror("Error reading input");
 exit(EXIT_FAILURE);
 }
 }
-execution(command);
+length = strlen(command);
+if (length > 0 && command[length - 1] == '\n')
+{
+command[length - 1] = '\0';
+}
+exe(command);
 }
 return (0);
 }
