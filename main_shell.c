@@ -28,7 +28,11 @@ if (length > 0 && command[length - 1] == '\n')
 {
 command[length - 1] = '\0';
 }
+command[strcspn(command, "\n")] = '\0';
+if (strlen(command) > 0)
+{
 exe(command);
+}
 }
 return (0);
 }

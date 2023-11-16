@@ -5,15 +5,23 @@
  */
 void exe(char *command)
 {
-if (strlen(command) > 0)
+pid_t pid = fork();
+if (pid < 0)
 {
-if (access(command, X_OK) == 0)
+perror("Fork failed");
+exit(EXIT_FAILURE);
+}
+else if (pid == 0)
 {
-printf("Executing command: %s\n", command);
+char *args[] = {"ls", NULL};
+if (execve(command, args, NULL) == -1)
+{
+perror("Execution failed");
+exit(EXIT_FAILURE);
+}
 }
 else
 {
-printf("Command '%s' not found. Please enter a valid command.\n", command);
-}
+wait(NULL);
 }
 }
